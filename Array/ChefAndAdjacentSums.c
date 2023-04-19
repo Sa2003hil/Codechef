@@ -28,13 +28,33 @@ int main(void)
                 if (arr[i] + arr[j] > z)
                 {
                     swap(&arr[0], &arr[n - 2]);
+                    flag = 0;
+                    if (arr[i] + arr[j] < z)
+                    {
+                        flag = 1;
+                    }
                 }
                 else if (arr[i] + arr[j] < z)
                 {
                     flag = 1;
                 }
-                else if (arr[i] == arr[i + 1] || n == 2)
-                {
-                    flag = 0;
-                }
-         
+            }
+        }
+        if (flag == 1)
+        {
+            printf("YES\n");
+        }
+        else if (flag == 0)
+        {
+            printf("NO\n");
+        }
+    }
+    return 0;
+}
+
+void swap(int *x, int *y)
+{
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
