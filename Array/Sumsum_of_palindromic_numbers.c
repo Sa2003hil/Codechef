@@ -8,20 +8,20 @@ int main(void)
     {
         int l, r;
         scanf("%d %d", &l, &r);
-        int rem, rev = 0, sum = 0;
+        int sum = 0;
         for (int num = l; num <= r; num++)
         {
             int temp = num;
+            int rev = 0;
             while (temp != 0)
             {
-                rem = temp % 10;
+                int rem = temp % 10;
                 rev = (rev * 10) + rem;
                 temp /= 10;
             }
-            printf("%d\n", rev);
-            if (num == rev)
+            if (rev == num)
             {
-                sum += rev;
+                sum += num;
             }
         }
         printf("%d\n", sum);
